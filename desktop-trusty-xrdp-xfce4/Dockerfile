@@ -76,7 +76,7 @@ RUN dbus-uuidgen --ensure
 RUN echo "[supervisord]\nnodaemon=true\n" > /etc/supervisor/conf.d/supervisord.conf
 RUN echo "[program:xrdp]\ncommand=/usr/sbin/xrdp --nodaemon\n" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "[program:xrdp-sesman]\ncommand=/usr/sbin/xrdp-sesman -n\n" >> /etc/supervisor/conf.d/supervisord.conf
-RUN echo "[program:dbus-daemon]\ncommand=/bin/dbus-daemon --system --nofork\n" >> /etc/supervisor/conf.d/supervisord.conf
+RUN echo "[program:dbus-daemon]\ncommand=/bin/dbus-daemon --system --nofork\nuser=messagebus\n" >> /etc/supervisor/conf.d/supervisord.conf
 
 # User
 RUN useradd -m -d /home/guest -p guest guest

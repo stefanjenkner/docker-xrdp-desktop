@@ -59,6 +59,6 @@ Login with your RDP-client of choice:
     Password: docker
     Session:  sesman-xrdp
 
-For testing sound redirection, start a terminal an run:
+For testing sound redirection, start a terminal and run:
 
     paplay /usr/share/orage/sounds/Knock.wav
